@@ -6,7 +6,7 @@ export const addJokesOne = (jokes) => {
 
 export const startGetJokesOne = () => {
     return(dispatch)=>{
-        axios.get('http://dct-cors.herokuapp.com/https://official-joke-api.appspot.com/jokes/programming/ten')
+        axios.get('https://dct-cors.herokuapp.com/https://official-joke-api.appspot.com/jokes/programming/ten')
             .then((response)=>{
                 dispatch(addJokesOne(response.data))
             })
@@ -23,7 +23,7 @@ export const addJokesComic = (jokes) => {
 export const startGetComicJokes = () => {
     return(dispatch)=>{
         const randomJoke = Math.round(Math.random()*2000)
-        axios.get(`http://dct-cors.herokuapp.com/https://xkcd.com/${randomJoke}/info.0.json`)
+        axios.get(`https://dct-cors.herokuapp.com/https://xkcd.com/${randomJoke}/info.0.json`)
             .then((response)=>{
                 dispatch(addJokesComic(response.data))
             })
@@ -40,7 +40,7 @@ export const addJokesTwo = (jokes) => {
 export const startGetJokesTwo = (obj) => {
     return(dispatch)=>{
         if(!obj){
-            axios.get('http://dct-cors.herokuapp.com/https://sv443.net/jokeapi/v2/joke/Any')
+            axios.get('https://dct-cors.herokuapp.com/https://sv443.net/jokeapi/v2/joke/Any')
                 .then((response)=>{
                     dispatch(addJokesTwo(response.data))
                 })
@@ -56,7 +56,7 @@ export const addMemeJokes = (jokes) => {
 }
 export const startGetMemesJokes = () => {
     return(dispatch)=>{
-        axios.get('http://dct-cors.herokuapp.com/https://meme-api.herokuapp.com/gimme/6')
+        axios.get('https://dct-cors.herokuapp.com/https://meme-api.herokuapp.com/gimme/6')
             .then((response)=>{
                 dispatch(addMemeJokes(response.data.memes))
             })
@@ -72,7 +72,7 @@ export const addMemesPart2 = (jokes) => {
 
 export const startGetMemesPart2 = () => {
     return(dispatch)=>{
-        axios.get('http://dct-cors.herokuapp.com/https://meme-api.herokuapp.com/gimme/dankmemes/2')
+        axios.get('https://dct-cors.herokuapp.com/https://meme-api.herokuapp.com/gimme/dankmemes/2')
             .then((response)=>{
                 dispatch(addMemesPart2(response.data.memes))
             })
